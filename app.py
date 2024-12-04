@@ -60,4 +60,5 @@ def delete_videogame(id):
     return jsonify({'message': 'Videogame not found'}), 404
 
 if __name__ == '__main__':
-    app.run(port=3000)
+    port = int(os.environ.get('PORT', 3000))  
+    app.run(host='0.0.0.0', port=port)
